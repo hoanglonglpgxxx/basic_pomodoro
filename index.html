@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="us">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="./assets/imgs/favicon.ico" type="image/x-icon" id="favicon" />
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- title -->
+    <title>Pomodoro</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="logo">
+        <img src="./assets/imgs/logo-icon.png" alt="logo" />
+        <h1>Pomofocus Clone</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <img src="./assets/imgs/settings.png" alt="gear" />
+            <span>Settings</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main">
+      <nav>
+        <ul>
+          <li class="active" id="pomodoroMode">Pomodoro</li>
+          <li id="shortBreakMode">Short Break</li>
+          <li id="longBreakMode">Long Break</li>
+        </ul>
+      </nav>
+      <span id="timer">25:00</span>
+      <input type="button" value="START" id="control-btn" />
+      <!-- <input type="button" value="START" id="texrt" /> -->
+    </div>
+    <p id="sess"></p>
+  </body>
+
+  <script src="./assets/js/main.js"></script>
+</html>
