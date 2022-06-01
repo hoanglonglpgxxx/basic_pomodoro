@@ -1,6 +1,6 @@
 const modes = [
-    ['Pomodoro', document.querySelector('#pomodoroMode'), 'rgb(90 109 142)', .1],
-    ['Short Break', document.querySelector('#shortBreakMode'), 'rgb(192 110 130)', .2],
+    ['Pomodoro', document.querySelector('#pomodoroMode'), 'rgb(90 109 142)', 60],
+    ['Short Break', document.querySelector('#shortBreakMode'), 'rgb(192 110 130)', 15],
     ['Long Break', document.querySelector('#longBreakMode'), '#375192', 30],
 ];
 const setPageTitle = text => document.title = text;
