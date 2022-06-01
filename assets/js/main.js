@@ -36,16 +36,16 @@ const startTimer = () => {
         setPageTitle(`${formatTimer()} - ${getActiveMode()}`);
         console.log();
         if (timerInSeconds === 0) resetTimer();
-        if (Notification.permission === 'granted') {
-            const text =
-                getActiveMode() === 'Pomodoro' ? 'Get back to work!' : 'Take a break!';
-            new Notification(text);
-        }
+        // if (Notification.permission === 'granted') {
+        //     const text =
+        //         getActiveMode() === 'Pomodoro' ? 'Get back to work!' : 'Take a break!';
+        //     new Notification(text);
+        // }
     }, 1000);
     setButtonText('STOP');
 
 
-    playAudio('start_sound.mp3');
+    playAudio('button_press.wav');
 };
 console.log(getActiveMode());
 
@@ -105,7 +105,6 @@ const autoRun = (modeName) => {
         timeInMinutes = time;
         timerInSeconds = minutesToSeconds(timeInMinutes);
         updateDisplayTimer(formatTimer(timerInSeconds));
-        name == 'Pomodoro' && mode.click();
         console.log(mode);
         startTimer();
     }
@@ -119,7 +118,6 @@ const autoRun = (modeName) => {
         timeInMinutes = time;
         timerInSeconds = minutesToSeconds(timeInMinutes);
         updateDisplayTimer(formatTimer(timerInSeconds));
-        name == 'Pomodoro' && mode.click();
         console.log(mode);
         startTimer();
     }
@@ -135,7 +133,6 @@ const getMode = name => {
     return mode;
 };
 // console.log(getMode('Long Break'));
-
 
 //chuyển mode
 const onClickModes = () => {
@@ -167,22 +164,21 @@ const playAudio = file => {
     document.body.appendChild(audio);
 };
 
-//notification
-document.addEventListener('DOMContentLoaded', () => {
-    if ('Notification' in window) {
-        if (
-            Notification.permission !== 'granted' &&
-            Notification.permission !== 'denied'
-        ) {
-            Notification.requestPermission().then(function (permission) {
-                if (permission === 'granted') {
-                    new Notification(
-                        'Awesome! You will be notified at the start of each session'
-                    );
-                }
-            });
-        }
-    }
+//notification, phần này phải search lại rồi, không thấy noti
+// document.addEventListener('DOMContentLoaded', () => {
+//     if ('Notification' in window) {
+//         if (
+//             Notification.permission !== 'granted' &&
+//             Notification.permission !== 'denied'
+//         ) {
+//             Notification.requestPermission().then(function (permission) {
+//                 if (permission === 'granted') {
+//                     new Notification(
+//                         'Awesome! You will be notified at the start of each session'
+//                     );
+//                 }
+//             });
+//         }
+//     }
 
-    // switchMode('pomodoro');
-});
+// });

@@ -13,6 +13,9 @@ html,
   -ms-user-select: none;
   user-select: none;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -127,4 +130,9 @@ li.active {
   height: 53px;
   position: relative;
   box-shadow: #efefef 0px 6px 0px;
+}
+
+.session {
+  position: absolute;
+  bottom: 120px;
 }
